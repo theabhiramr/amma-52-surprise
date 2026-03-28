@@ -1,16 +1,12 @@
 export default function SuccessPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pink-300 to-purple-300">
-      <h1 className="text-4xl font-bold text-white mb-4">Congratulations!</h1>
-      <p className="text-lg text-white mb-8">
-        You've successfully completed the crossword puzzle.
-      </p>
-      <div className="bg-white rounded-lg shadow-lg p-6">
-        <p className="text-gray-800 text-5xl font-semibold mb-4"> O </p>
-        <p className="text-gray-800 text-sm font-semibold mb-4">
-          {" "}
-          Go to your office{" "}
-        </p>
+      <h1 className="text-2xl font-bold text-gray-800 mb-6">
+        Congratulations! Here is your next clue:
+      </h1>
+      <div className="bg-yellow-200 rounded-sm shadow-md p-6 w-40 aspect-square flex flex-col items-center justify-center rotate-1">
+        <p className="text-8xl font-bold text-gray-800 leading-none">O</p>
+        <p className="text-sm text-gray-600 mt-1">Go to your office</p>
       </div>
     </div>
   );
