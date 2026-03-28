@@ -258,23 +258,30 @@ export default function ConnectionsPage() {
 
       <div className="w-full max-w-2xl flex flex-col gap-4 mb-8">
         {solvedGroups.map((group) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             key={group.category}
             className="p-4 rounded-lg text-center h-20 flex flex-col items-center justify-center"
             style={{ backgroundColor: LEVEL_COLORS[group.level] }}
           >
             <h3 className="font-bold text-lg">{group.category}</h3>
             <p>{group.items.join(", ")}</p>
-          </div>
+          </motion.div>
         ))}
 
-        <div className="relative grid grid-cols-4 gap-2 md:gap-4">
+        <motion.div 
+          className="relative grid grid-cols-4 gap-2 md:gap-4"
+        >
           {animatingGroup && (
-            <div
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
               className="absolute top-0 left-0 w-full z-10 p-2 md:p-4 rounded-lg text-center flex flex-col items-center justify-center"
               style={{
                 backgroundColor: LEVEL_COLORS[animatingGroup.level],
-                height: "80px", // Keep fixed height for consistency
+                height: "80px",
               }}
             >
               <h3 className="font-bold text-sm md:text-lg">
@@ -283,7 +290,7 @@ export default function ConnectionsPage() {
               <p className="text-xs md:text-base">
                 {animatingGroup.items.join(", ")}
               </p>
-            </div>
+            </motion.div>
           )}
 
           {items.map((item, index) => {
@@ -292,12 +299,23 @@ export default function ConnectionsPage() {
             const shouldHide = isAnimating && isInTopRow;
 
             return (
-              <button
+              <motion.button
+                layout
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ 
+                  opacity: shouldHide ? 0 : 1, 
+                  scale: 1,
+                  x: (shake && selected.includes(item)) ? [-10, 10, -10, 10, 0] : 0
+                }}
+                transition={{
+                  layout: { duration: 0.5, ease: "easeInOut" },
+                  opacity: { duration: 0.2, delay: shouldHide ? 0.5 : 0 },
+                  x: { duration: 0.4 }
+                }}
                 key={item}
                 onClick={() => !isAnimating && handleSelect(item)}
                 className={`
                   h-16 md:h-20 rounded-lg font-bold transition-colors text-[10px] md:text-base p-1 break-words leading-tight
-                  ${shake && selected.includes(item) ? "animate-pulse" : ""}
                   ${
                     selected.includes(item)
                       ? "bg-zinc-800 text-white"
@@ -305,16 +323,15 @@ export default function ConnectionsPage() {
                   }
                 `}
                 style={{
-                  opacity: shouldHide ? 0 : 1,
                   cursor: isAnimating ? "default" : "pointer",
                   pointerEvents: shouldHide ? "none" : "auto",
                 }}
               >
                 {item}
-              </button>
+              </motion.button>
             );
           })}
-        </div>
+        </motion.div>
       </div>
 
       <div className="flex gap-4 mb-8 mt-8">
