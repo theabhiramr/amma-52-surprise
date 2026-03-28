@@ -1,7 +1,13 @@
 import ConnectionsPage from "./pages/connections";
+import SuccessPage from "./pages/success";
 
 function App() {
-  return <ConnectionsPage />;
+  return (
+    <>
+      <ConnectionsPage />
+      <SuccessPage />
+    </>
+  );
 }
 
 export default App;

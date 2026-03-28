@@ -235,20 +235,20 @@ export default function ConnectionsPage() {
       <h1 className="text-4xl font-bold mb-8">Connections</h1>
 
       {solvedGroups.length === 4 && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           className="mb-8 flex flex-col items-center gap-4"
         >
           <a
-            href="/crossword"
+            href="/success"
             className="px-6 py-3 bg-black text-white rounded-full font-bold text-xl hover:scale-105 transition-transform inline-block animate-bounce"
           >
-            Continue to Next Challenge →
+            See your clue →
           </a>
           {gameOver ? (
             <p className="text-lg font-medium text-zinc-600">
-              It's okay, Appa ❤️
+              It's okay, Amma ❤️
             </p>
           ) : (
             <p className="text-lg font-medium text-zinc-600">Great job! 🎉</p>
@@ -270,9 +270,7 @@ export default function ConnectionsPage() {
           </motion.div>
         ))}
 
-        <motion.div 
-          className="relative grid grid-cols-4 gap-2 md:gap-4"
-        >
+        <motion.div className="relative grid grid-cols-4 gap-2 md:gap-4">
           {animatingGroup && (
             <motion.div
               initial={{ opacity: 0 }}
@@ -302,15 +300,18 @@ export default function ConnectionsPage() {
               <motion.button
                 layout
                 initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ 
-                  opacity: shouldHide ? 0 : 1, 
+                animate={{
+                  opacity: shouldHide ? 0 : 1,
                   scale: 1,
-                  x: (shake && selected.includes(item)) ? [-10, 10, -10, 10, 0] : 0
+                  x:
+                    shake && selected.includes(item)
+                      ? [-10, 10, -10, 10, 0]
+                      : 0,
                 }}
                 transition={{
                   layout: { duration: 0.5, ease: "easeInOut" },
                   opacity: { duration: 0.2, delay: shouldHide ? 0.5 : 0 },
-                  x: { duration: 0.4 }
+                  x: { duration: 0.4 },
                 }}
                 key={item}
                 onClick={() => !isAnimating && handleSelect(item)}
