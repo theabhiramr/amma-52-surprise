@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 type Group = {
@@ -70,6 +71,7 @@ function Toast({
 }
 
 export default function ConnectionsPage() {
+  const navigate = useNavigate();
   const [items, setItems] = useState<string[]>([]);
   const [selected, setSelected] = useState<string[]>([]);
   const [solvedGroups, setSolvedGroups] = useState<Group[]>([]);
@@ -240,12 +242,12 @@ export default function ConnectionsPage() {
           animate={{ opacity: 1, scale: 1 }}
           className="mb-8 flex flex-col items-center gap-4"
         >
-          <a
-            href="/success"
+          <button
+            onClick={() => navigate("/success")}
             className="px-6 py-3 bg-black text-white rounded-full font-bold text-xl hover:scale-105 transition-transform inline-block animate-bounce"
           >
             See your clue →
-          </a>
+          </button>
           {gameOver ? (
             <p className="text-lg font-medium text-zinc-600">
               It's okay, Amma ❤️
