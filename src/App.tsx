@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ConnectionsPage from "./pages/connections";
-import SuccessPage from "./pages/success";
+import ConnectionsPage from "./pages/connections/index";
+import SuccessPage from "./pages/success/index";
 
 function App() {
   return (
