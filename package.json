@@ -8,7 +8,7 @@
     "build": "npm install && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "npm run build && npx wrangler pages deploy dist"
+    "deploy": "npm run build && npx wrangler pages deploy dist --project-name=nyt-games"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",

@@ -4,6 +4,5 @@ compatibility_date = "2024-01-01"
 [build]
 command = "npm run build"
 
-[assets]
-directory = "./dist"
-fallback_html = "./dist/index.html"
+[pages]
+build_output_dir = "dist"
