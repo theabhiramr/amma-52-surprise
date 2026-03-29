@@ -10,23 +10,23 @@ type Group = {
 
 const PUZZLE_DATA: Group[] = [
   {
-    category: "RELATED TO INTELLIGENCE",
-    items: ["IQ", "AI", "APTITUDE", "COGNITION"],
+    category: "SYNONYMS FOR GO",
+    items: ["", "EMBARK", "SEGUE", "PROCEED"],
     level: 1,
   },
   {
-    category: "TYPES OF EXERCISES",
-    items: ["CALISTHENICS", "MACHINE", "CABLE", "FREE WEIGHT"],
+    category: "RELATED TO HUMAN RESOURCES",
+    items: ["CLAIM", "PERFORMANCE", "INVESTIGATION", "SCREEN"],
     level: 2,
   },
   {
-    category: "WORK FROM HOME",
-    items: ["MONITOR", "TEAMS", "WHITEBOARD", "STANDING DESK"],
+    category: "THINGS THAT ARE YOURS",
+    items: ["ID", "FINGERPRINT", "LIFE", "RIGHTS"],
     level: 3,
   },
   {
-    category: "SYNONYMS FOR MOUNT",
-    items: ["PINNACLE", "STRADDLE", "INCREASE", "INSTALL"],
+    category: "REPRESNTED AS 'TO'",
+    items: ["TORONTO", "TIMEOUT", "AND", "TONGA"],
     level: 4,
   },
 ];
