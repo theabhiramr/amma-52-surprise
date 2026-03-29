@@ -6,3 +6,4 @@ command = "npm run build"
 
 [assets]
 directory = "./dist"
+fallback_html = "./dist/index.html"
