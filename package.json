@@ -5,10 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm install && tsc -b && vite build && cp dist/index.html dist/404.html",
+    "build": "npm install && tsc -b && vite build && cp dist/index.html dist/404.html && npx wrangler pages deploy dist --project-name=nyt-games",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "deploy": "npm run build && npx wrangler pages deploy dist --project-name=nyt-games"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
