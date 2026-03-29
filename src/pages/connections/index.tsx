@@ -11,7 +11,7 @@ type Group = {
 const PUZZLE_DATA: Group[] = [
   {
     category: "SYNONYMS FOR GO",
-    items: ["", "EMBARK", "SEGUE", "PROCEED"],
+    items: ["", "EMBARK", "MOVE", "PROCEED", "ADVANCE"],
     level: 1,
   },
   {
