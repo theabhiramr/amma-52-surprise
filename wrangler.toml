@@ -6,3 +6,6 @@ command = "npm run build"
 
 [pages]
 build_output_dir = "dist"
+
+[build.environment]
+NODE_VERSION = "22"
